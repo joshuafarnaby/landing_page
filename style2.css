@@ -30,7 +30,7 @@ body {
 
 .page-container {
   display: grid;
-  grid-template: min-content 1fr 1fr 1fr / min-content 1fr 1fr 1fr;
+  grid-template: min-content 1fr 1fr 1fr / min-content 1fr 1fr min-content;
   height: 100%;
 }
 
@@ -44,6 +44,14 @@ body {
   display: flex;
   flex-direction: column;
   gap: 30px;
+
+  position: fixed;
+  height: 100vh;
+}
+
+.header,
+.primary-content {
+  margin-left: 278px;
 }
 
 .logo-container {
@@ -206,9 +214,46 @@ label[for='search']:hover {
   box-shadow: 2px 2px 6px var(--slate-400);
 }
 
+/* primary content */
+
 .primary-content {
   grid-area: 2 / 2 / 5 / 4;
+  padding: 20px;
 }
+
+.primary-content > h3 {
+  margin-bottom: 20px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.primary-card {
+  background-color: #fefefe;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 4px 4px 4px #ccc;
+  border-top: 5px solid var(--slate-600);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: space-between;
+}
+
+.primary-card:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+}
+
+.primary-card p {
+  font-size: 1rem;
+}
+
+/* secondary content */
 
 .secondary-content {
   grid-area: 2 / 4 / 5 / 5;
